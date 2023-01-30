@@ -1,19 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Nav />
+    <Reputation :cards="reputation" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Nav from "./components/Nav.vue";
+import Reputation from "./components/Reputation.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Nav,
+    Reputation,
+  },
+  data() {
+    return {
+      reputation: [
+        {
+          header: "Best Services",
+          text: "Nullam senectus porttitor in eget. Eget rutrum leo interdum.",
+        },
+        {
+          header: "Reasons",
+          text: "Cursus semper tellus volutpat aliquet lacus.",
+        },
+        {
+          header: "Best Designs",
+          text: "Ultricies at ipsum nunc, tristique nam lectus.",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>

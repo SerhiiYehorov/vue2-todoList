@@ -2,21 +2,30 @@
   <div id="app">
     <Nav />
     <Reputation :cards="reputation" />
+    <CountText :count="count" />
+    <Button text="Add one" @click="addCount" />
+    <Button text="Minus one" @click="count--" />
   </div>
 </template>
 
 <script>
 import Nav from "./components/Nav.vue";
 import Reputation from "./components/Reputation.vue";
+import Button from "./components/Button.vue";
+import CountText from "./components/CountText.vue";
 
 export default {
   name: "App",
   components: {
     Nav,
     Reputation,
+    Button,
+    CountText,
   },
   data() {
     return {
+      name: "Serhii",
+      count: 1,
       reputation: [
         {
           header: "Best Services",
@@ -32,6 +41,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    addCount(e) {
+      console.log(e);
+      this.count++;
+    },
   },
 };
 </script>

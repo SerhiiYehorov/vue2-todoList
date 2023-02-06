@@ -15,7 +15,9 @@ export default {
 </script>
 
 <style scoped>
-.todo__id {
+.todo__id,
+.todo__item {
   padding-right: 5px;
+  padding-top: 25px;
 }
 </style>

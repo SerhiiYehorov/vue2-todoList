@@ -7,15 +7,17 @@
     <Button text="Add one" @click="addCount" />
     <Button text="Minus one" @click="count--" />
     <Input @input="addText" />
+    <Todolist />
   </div>
 </template>
 
 <script>
-import Nav from "./components/Nav.vue";
-import Reputation from "./components/Reputation.vue";
-import Button from "./components/Button.vue";
-import CountText from "./components/CountText.vue";
-import Input from "./components/Input.vue";
+import Nav from "./components/firstLessons/Nav.vue";
+import Reputation from "./components/firstLessons/Reputation.vue";
+import Button from "./components/firstLessons/Button.vue";
+import CountText from "./components/firstLessons/CountText.vue";
+import Input from "./components/firstLessons/Input.vue";
+import Todolist from "./components/todoList/Todolist.vue";
 
 export default {
   name: "App",
@@ -25,6 +27,7 @@ export default {
     Button,
     CountText,
     Input,
+    Todolist,
   },
   data() {
     return {

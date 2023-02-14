@@ -1,16 +1,36 @@
 <template>
   <div>
     <div class="todo" v-for="(item, i) in items" :key="i">
-      <span class="todo__id">{{ i + 1 }}.</span>
-      <span class="todo__item">{{ item }}</span>
-      <button @click="$emit('delete', i)">Delete todo</button>
+      <TodoItem
+        :id="i + 1"
+        :item="item"
+        @delete="$emit('delete', $event)"
+        @edit="sendEdit"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import TodoItem from "./TodoItem.vue";
+
 export default {
+  components: {
+    TodoItem,
+  },
+
   props: ["items"],
+
+  methods: {
+    sendEdit(item) {
+      const params = {
+        text: item.text,
+        id: item.id,
+      };
+
+      this.$emit("edit", params);
+    },
+  },
 };
 </script>
 

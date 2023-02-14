@@ -1,6 +1,7 @@
 <template>
   <div>
-    <List :items="todos" @delete="deleteTodo" />
+    <h4>My todo list</h4>
+    <List :items="todos" @edit="editTodo" @delete="deleteTodo" />
     <Todoinput @addTodo="addTodo" />
   </div>
 </template>
@@ -27,6 +28,10 @@ export default {
 
     deleteTodo(i) {
       this.todos.splice(i, 1);
+    },
+
+    editTodo(todo) {
+      this.todos.splice(todo.id, 1, todo.text);
     },
   },
 };

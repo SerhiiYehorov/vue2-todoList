@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app" id="app">
     <Nav />
     <Reputation :cards="reputation" />
     <div>{{ text }}</div>
@@ -7,7 +7,7 @@
     <Button text="Add one" @click="addCount" />
     <Button text="Minus one" @click="count--" />
     <Input @input="addText" />
-    <Todolist />
+    <Todolist class="app__todolist" />
   </div>
 </template>
 
@@ -75,13 +75,20 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
+  box-sizing: border-box;
+  margin: 0px auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: aqua;
+  padding: 20px;
+
+  &__todolist {
+    margin-bottom: 20px;
+  }
 }
 </style>

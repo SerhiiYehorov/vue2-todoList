@@ -35,6 +35,9 @@ export default {
 </script>
 
 <style scoped>
+.todo {
+  margin-bottom: 30px;
+}
 .todo__id,
 .todo__item {
   padding-right: 5px;
